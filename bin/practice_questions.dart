@@ -41,110 +41,110 @@
 
 // Thank you
 
-import 'dart:io';
+// import 'dart:io';
 
-// Global variables (maps)
+// // Global variables (maps)
 
-// username and passwords
-Map userNamePassword = {};
+// // username and passwords
+// Map userNamePassword = {};
 
-// Username and Password storing Function
-storingFunction(String userName, String passWord) {
-  userNamePassword[userName] = passWord;
-}
+// // Username and Password storing Function
+// storingFunction(String userName, String passWord) {
+//   userNamePassword[userName] = passWord;
+// }
 
-void main() {
-  displayFunction();
-}
+// void main() {
+//   displayFunction();
+// }
 
-displayFunction() {
-  stdout.write(""" Choose one : 
+// displayFunction() {
+//   stdout.write(""" Choose one : 
   
-  1. Register 
-  2. Login
-  3. Exit 
+//   1. Register 
+//   2. Login
+//   3. Exit 
   
-  Enter your choice :  """);
-  int choice = int.parse(stdin.readLineSync()!);
+//   Enter your choice :  """);
+//   int choice = int.parse(stdin.readLineSync()!);
 
-  if (choice == 1) {
-    registerFunction();
-  } else if (choice == 2) {
-    loginFunction();
-  } else if (choice == 3) {
-    print("Thank You.");
-  } else {
-    print("Invalid option. Please try again.");
-    displayFunction();
-  }
-}
+//   if (choice == 1) {
+//     registerFunction();
+//   } else if (choice == 2) {
+//     loginFunction();
+//   } else if (choice == 3) {
+//     print("Thank You.");
+//   } else {
+//     print("Invalid option. Please try again.");
+//     displayFunction();
+//   }
+// }
 
-// Registeration Function
-registerFunction() {
-  stdout.write("Enter the username : ");
-  String userName = stdin.readLineSync()!;
-  stdout.write("Enter the password : ");
-  String passWord = stdin.readLineSync()!;
+// // Registeration Function
+// registerFunction() {
+//   stdout.write("Enter the username : ");
+//   String userName = stdin.readLineSync()!;
+//   stdout.write("Enter the password : ");
+//   String passWord = stdin.readLineSync()!;
 
-  // Storing user name and passowrd
-  storingFunction(userName, passWord);
+//   // Storing user name and passowrd
+//   storingFunction(userName, passWord);
 
-  if (userName.isNotEmpty && passWord.isNotEmpty) {
-    print("User registered successfully!");
-    print(userNamePassword);
-    displayFunction();
-  } else {
-    print("The value is Empty or something error occured. ");
-    displayFunction();
-  }
-}
+//   if (userName.isNotEmpty && passWord.isNotEmpty) {
+//     print("User registered successfully!");
+//     print(userNamePassword);
+//     displayFunction();
+//   } else {
+//     print("The value is Empty or something error occured. ");
+//     displayFunction();
+//   }
+// }
 
-// Function to check is there the useranem and password
-bool checkValues(String username, String password) {
-  if (userNamePassword.containsKey(username) &&
-      userNamePassword[username] == password) {
-    return true;
-  } else {
-    return false;
-  }
-}
+// // Function to check is there the useranem and password
+// bool checkValues(String username, String password) {
+//   if (userNamePassword.containsKey(username) &&
+//       userNamePassword[username] == password) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
 
-// Login Function
-loginFunction() {
-  stdout.write("Enter the username : ");
-  String userName = stdin.readLineSync()!;
-  stdout.write("Enter the password : ");
-  String passWord = stdin.readLineSync()!;
+// // Login Function
+// loginFunction() {
+//   stdout.write("Enter the username : ");
+//   String userName = stdin.readLineSync()!;
+//   stdout.write("Enter the password : ");
+//   String passWord = stdin.readLineSync()!;
 
-  if (userName.isNotEmpty && passWord.isNotEmpty) {
-    if (checkValues(userName, passWord)) {
-      print("Login successful! Welcome, $userName .");
-      afterLogin();
-    } else {
-      print("Invalid username or password,try again");
-      displayFunction();
-    }
-  }
-}
+//   if (userName.isNotEmpty && passWord.isNotEmpty) {
+//     if (checkValues(userName, passWord)) {
+//       print("Login successful! Welcome, $userName .");
+//       afterLogin();
+//     } else {
+//       print("Invalid username or password,try again");
+//       displayFunction();
+//     }
+//   }
+// }
 
-// After login function
-afterLogin() {
-  print("""Enter your Choice : 
+// // After login function
+// afterLogin() {
+//   print("""Enter your Choice : 
   
-  1. Log out
-  2. Exit """);
+//   1. Log out
+//   2. Exit """);
 
-  stdout.write("Enter your choice : ");
-  int choice = int.parse(stdin.readLineSync()!);
+//   stdout.write("Enter your choice : ");
+//   int choice = int.parse(stdin.readLineSync()!);
 
-  // ignore: unrelated_type_equality_checks
-  if (choice == 1) {
-    print("Logged out successfully.");
-    displayFunction();
-  } else if (choice == 2) {
-    print("");
-  } else {
-    print("Wrong input ");
-    afterLogin();
-  }
-}
+//   // ignore: unrelated_type_equality_checks
+//   if (choice == 1) {
+//     print("Logged out successfully.");
+//     displayFunction();
+//   } else if (choice == 2) {
+//     print("");
+//   } else {
+//     print("Wrong input ");
+//     afterLogin();
+//   }
+// }
