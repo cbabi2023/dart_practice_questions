@@ -58,12 +58,12 @@
 // }
 
 // displayFunction() {
-//   stdout.write(""" Choose one : 
-  
-//   1. Register 
+//   stdout.write(""" Choose one :
+
+//   1. Register
 //   2. Login
-//   3. Exit 
-  
+//   3. Exit
+
 //   Enter your choice :  """);
 //   int choice = int.parse(stdin.readLineSync()!);
 
@@ -129,8 +129,8 @@
 
 // // After login function
 // afterLogin() {
-//   print("""Enter your Choice : 
-  
+//   print("""Enter your Choice :
+
 //   1. Log out
 //   2. Exit """);
 
@@ -148,3 +148,48 @@
 //     afterLogin();
 //   }
 // }
+
+// sir answer
+
+import 'dart:io';
+
+String registeredName = "";
+String registeredPass = "";
+void main() {
+  for (;;) {
+    print("""
+    1. Registration
+    2. Login
+    3. Exit
+""");
+    stdout.write("Enter your Choice : ");
+    int userChoice = int.parse(stdin.readLineSync()!);
+    if (userChoice == 1) {
+      Map registerdData = register();
+      print(registerdData);
+    } else if (userChoice == 2) {
+      print("Login Now");
+    } else if (userChoice == 3) {
+      print("Thank you");
+      break;
+    } else {
+      print("Invalid choice, Try Again");
+    }
+  }
+}
+
+Map register() {
+  stdout.write("Enter user name : ");
+  String userName = stdin.readLineSync()!;
+  stdout.write("Enter pass : ");
+  String pass = stdin.readLineSync()!;
+  if (userName.isNotEmpty && pass.isNotEmpty) {
+    registeredName = userName;
+    registeredPass = pass;
+    print("User registered successfully!");
+  } else {
+    print("Failed to register Try again");
+  }
+
+  return {"name": userName, "pass": pass};
+}
