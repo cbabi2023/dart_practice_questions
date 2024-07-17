@@ -131,147 +131,202 @@ Goodbye! Thank you for using the Banking Application!
 
 */
 
-import 'dart:io';
+// import 'dart:io';
 
-// Global variables
-int? choice;
-int? choiceBankservice;
-Map storingMap = {};
-int accountBalance = 1000;
+// // Global variables
+// int? choice;
+// int? choiceBankservice;
+// Map storingMap = {};
+// int accountBalance = 1000;
 
-// Main function
-void main() {
-  print("Welcome to the Banking Application!");
-  mainDispaly();
-}
+// // Main function
+// void main() {
+//   print("Welcome to the Banking Application!");
+//   mainDispaly();
+// }
 
-// Main display Function
-mainDispaly() {
-  print("""
+// // Main display Function
+// mainDispaly() {
+//   print("""
 
-1. Register
-2. Login
-3. Exit
+// 1. Register
+// 2. Login
+// 3. Exit
 
-""");
+// """);
 
-  stdout.write("Enter your Choice : ");
-  choice = int.parse(stdin.readLineSync()!);
+//   stdout.write("Enter your Choice : ");
+//   choice = int.parse(stdin.readLineSync()!);
 
-  if (choice == 1) {
-    registerFunction(); // Registration
-  } else if (choice == 2) {
-    loginFunction();
-  } else if (choice == 3) {
-    print("Goodbye! Thank you for using the Banking Application!");
-  } else {
-    print("Invalid Choice !");
-    mainDispaly();
-  }
-}
+//   if (choice == 1) {
+//     registerFunction(); // Registration
+//   } else if (choice == 2) {
+//     loginFunction();
+//   } else if (choice == 3) {
+//     print("Goodbye! Thank you for using the Banking Application!");
+//   } else {
+//     print("Invalid Choice !");
+//     mainDispaly();
+//   }
+// }
 
-// Storing function
-storingFunction(username, password) {
-  storingMap[username] = password;
-}
+// // Storing function
+// storingFunction(username, password) {
+//   storingMap[username] = password;
+// }
 
-// Register Function
-registerFunction() {
-  stdout.write("Enter your desired username: ");
-  String userName = stdin.readLineSync()!;
-  stdout.write("Enter your password: ");
-  String passWord = stdin.readLineSync()!;
+// // Register Function
+// registerFunction() {
+//   stdout.write("Enter your desired username: ");
+//   String userName = stdin.readLineSync()!;
+//   stdout.write("Enter your password: ");
+//   String passWord = stdin.readLineSync()!;
 
-  if (userName.isNotEmpty && passWord.isNotEmpty) {
-    print("Registration successful!");
-    storingFunction(userName, passWord);
-    mainDispaly();
-  } else {
-    print("Invalid username or Password");
-    mainDispaly();
-  }
-}
+//   if (userName.isNotEmpty && passWord.isNotEmpty) {
+//     print("Registration successful!");
+//     storingFunction(userName, passWord);
+//     mainDispaly();
+//   } else {
+//     print("Invalid username or Password");
+//     mainDispaly();
+//   }
+// }
 
-// Login Function
-loginFunction() {
-  stdout.write("Enter you username : ");
-  String userLoginName = stdin.readLineSync()!;
-  stdout.write("Enter your password : ");
-  String userLoginPassword = stdin.readLineSync()!;
+// // Login Function
+// loginFunction() {
+//   stdout.write("Enter you username : ");
+//   String userLoginName = stdin.readLineSync()!;
+//   stdout.write("Enter your password : ");
+//   String userLoginPassword = stdin.readLineSync()!;
 
-  if (userLoginName.isNotEmpty && userLoginPassword.isNotEmpty) {
-    if (loginCheck(userLoginName, userLoginPassword)) {
-      print("Login Successful!");
-      print("Welcome, $userLoginName");
-      afterLogin();
-    } else {
-      print("The Login Details was Invalid");
-      mainDispaly();
-    }
-  } else {
-    print("Please Enter correct Details !");
-    mainDispaly();
-  }
-}
+//   if (userLoginName.isNotEmpty && userLoginPassword.isNotEmpty) {
+//     if (loginCheck(userLoginName, userLoginPassword)) {
+//       print("Login Successful!");
+//       print("Welcome, $userLoginName");
+//       afterLogin();
+//     } else {
+//       print("The Login Details was Invalid");
+//       mainDispaly();
+//     }
+//   } else {
+//     print("Please Enter correct Details !");
+//     mainDispaly();
+//   }
+// }
 
-// Function to check Login
-bool loginCheck(String userName, String passWord) {
-  if (storingMap.containsKey(userName) && storingMap[userName] == passWord) {
-    return true;
-  } else {
-    return false;
-  }
-}
+// // Function to check Login
+// bool loginCheck(String userName, String passWord) {
+//   if (storingMap.containsKey(userName) && storingMap[userName] == passWord) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
 
-// After Login Function
-afterLogin() {
-  print("""
+// // After Login Function
+// afterLogin() {
+//   print("""
 
-1. Bank Details
-2. Deposit
-3. Withdraw
-4. Logout
+// 1. Bank Details
+// 2. Deposit
+// 3. Withdraw
+// 4. Logout
 
-""");
+// """);
 
-  stdout.write("Enter your Choice : ");
-  choiceBankservice = int.parse(stdin.readLineSync()!);
+//   stdout.write("Enter your Choice : ");
+//   choiceBankservice = int.parse(stdin.readLineSync()!);
 
-  if (choiceBankservice == 1) {
-    print("Account Balance = \$$accountBalance");
-    afterLogin();
-  } else if (choiceBankservice == 2) {
-    stdout.write("Enter the amount to deposit : \$");
-    int depositAmount = int.parse(stdin.readLineSync()!);
+//   if (choiceBankservice == 1) {
+//     print("Account Balance = \$$accountBalance");
+//     afterLogin();
+//   } else if (choiceBankservice == 2) {
+//     stdout.write("Enter the amount to deposit : \$");
+//     int depositAmount = int.parse(stdin.readLineSync()!);
 
-    // Total amount
-    accountBalance = accountBalance + depositAmount;
-    print("Deposit successful!");
-    print("Account Balance: \$$accountBalance");
+//     // Total amount
+//     accountBalance = accountBalance + depositAmount;
+//     print("Deposit successful!");
+//     print("Account Balance: \$$accountBalance");
 
-    afterLogin();
-  } else if (choiceBankservice == 3) {
-    stdout.write("Enter the amount to Withdraw : \$");
-    int withdrawAmount = int.parse(stdin.readLineSync()!);
+//     afterLogin();
+//   } else if (choiceBankservice == 3) {
+//     stdout.write("Enter the amount to Withdraw : \$");
+//     int withdrawAmount = int.parse(stdin.readLineSync()!);
 
-    // Total amount after withdraw
-    if (accountBalance >= withdrawAmount) {
-      accountBalance = accountBalance - withdrawAmount;
-      print("Withdrawl successful!");
-      print("Account Balance: \$$accountBalance");
+//     // Total amount after withdraw
+//     if (accountBalance >= withdrawAmount) {
+//       accountBalance = accountBalance - withdrawAmount;
+//       print("Withdrawl successful!");
+//       print("Account Balance: \$$accountBalance");
 
-      afterLogin();
-    } else {
-      print("Account Balace is Low for Withdraw!");
-      print("Account Balance: \$$accountBalance");
-      print("You need extra \$${withdrawAmount - accountBalance} ");
-      afterLogin();
-    }
-  } else if (choiceBankservice == 4) {
-    print("Logged out successfully! ");
-    mainDispaly();
-  }
-}
+//       afterLogin();
+//     } else {
+//       print("Account Balace is Low for Withdraw!");
+//       print("Account Balance: \$$accountBalance");
+//       print("You need extra \$${withdrawAmount - accountBalance} ");
+//       afterLogin();
+//     }
+//   } else if (choiceBankservice == 4) {
+//     print("Logged out successfully! ");
+//     mainDispaly();
+//   }
+// }
 
+/* 
+
+Write a program to print the following pattern
+
+* * * * * * * * * * * *
+ *
+  *
+   *
+    *
+      *
+        *
+          *
+
+
+ */
+
+// import 'dart:io';
+
+// void main() {
+//   int height = 10;
+
+//   // Lower triangle (downward facing) on top
+//   for (int i = height - 1; i >= 0; i--) {
+//     for (int j = height - 1; j > i; j--) {
+//       stdout.write(' ');
+//     }
+//     for (int k = 0; k < (2 * i + 1); k++) {
+//       if (k == 0 || k == 2 * i) {
+//         stdout.write('*');
+//       } else if (i == height - 1) {
+//         stdout.write('*');
+//       } else {
+//         stdout.write(' ');
+//       }
+//     }
+//     print('');
+//   }
+
+//   // Upper triangle (upward facing) on the bottom
+//   for (int i = 1; i < height; i++) {
+//     for (int j = height - 1; j > i; j--) {
+//       stdout.write(' ');
+//     }
+//     for (int k = 0; k < (2 * i + 1); k++) {
+//       if (k == 0 || k == 2 * i) {
+//         stdout.write('*');
+//       } else if (i == height - 1) {
+//         stdout.write('*');
+//       } else {
+//         stdout.write(' ');
+//       }
+//     }
+//     print('');
+//   }
+// }
 
 
