@@ -151,45 +151,146 @@
 
 // sir answer
 
+// import 'dart:io';
+
+// String registeredName = "";
+// String registeredPass = "";
+
+// void main() {
+//   for (;;) {
+//     print("""
+//     1. Registration
+//     2. Login
+//     3. Exit
+// """);
+//     stdout.write("Enter your Choice : ");
+//     int userChoice = int.parse(stdin.readLineSync()!);
+//     if (userChoice == 1) {
+//       Map registerdData = register();
+//       print(registerdData);
+//     } else if (userChoice == 2) {
+//       print("Login Now");
+//       bool isLogged = login();
+//       if (isLogged == true) {
+//         stdout.write("""
+
+// 1. Logout
+// 2. Exit
+
+// Enter your choice : """);
+
+// int loginChoice = int.parse(stdin.readLineSync()!);
+//       if (loginChoice == 1) {
+//         print("Logout successfull");
+//       } else if (loginChoice == 2) {
+//         print("Thank you ");
+//         break;
+//       }
+//       }
+
+//     } else if (userChoice == 3) {
+//       print("Thank you");
+//       break;
+//     } else {
+//       print("Invalid choice, Try Again");
+//     }
+//   }
+// }
+
+// Map register() {
+//   stdout.write("Enter user name : ");
+//   String userName = stdin.readLineSync()!;
+//   stdout.write("Enter pass : ");
+//   String pass = stdin.readLineSync()!;
+//   if (userName.isNotEmpty && pass.isNotEmpty) {
+//     registeredName = userName;
+//     registeredPass = pass;
+//     print("User registered successfully!");
+//   } else {
+//     print("Failed to register Try again");
+//   }
+
+//   return {"name": userName, "pass": pass};
+// }
+
+// bool login() {
+//   stdout.write("Enter username : ");
+//   String userName = stdin.readLineSync()!;
+//   stdout.write("Enter password : ");
+//   String pass = stdin.readLineSync()!;
+
+//     if (userName == registeredName && registeredPass == pass) {
+//       print("Login successfully, Welcome $userName");
+//       return true;
+//     } else {
+//       print("Invalid username or password,try again");
+//       return false;
+//     }
+//   }
+
+// 2.
+
+// *
+// * *
+// * * *
+// * * * *
+// * * * * *
+
+// import 'dart:io';
+
+// void main() {
+//   stdout.write("Enter the limit : ");
+//   int limitNum = int.parse(stdin.readLineSync()!);
+//   for (int row = 1; row <= limitNum; row++) {
+//     for (int col = 1; col <= row; col++) {
+//       stdout.write("* ");
+//     }
+//     print(" ");
+//   }
+// }
+
+// 3.
+// * * * * *
+// * * * *
+// * * *
+// * *
+// *
+
+// import 'dart:io';
+
+// void main() {
+//   stdout.write("Enter the limit : ");
+//   int limitNum = int.parse(stdin.readLineSync()!);
+//   for (int row = 1; row <= limitNum; row++) {
+//     for (int col = 1; col <= limitNum - row + 1; col++) {
+//       stdout.write("* ");
+//     }
+//     print(" ");
+//   }
+// }
+
+// 4.
+
+// *
+// * *
+// *  *
+// *   *
+// *    *
+// *     *
+// *      *
+// * * * * *
+
 import 'dart:io';
 
-String registeredName = "";
-String registeredPass = "";
 void main() {
-  for (;;) {
-    print("""
-    1. Registration
-    2. Login
-    3. Exit
-""");
-    stdout.write("Enter your Choice : ");
-    int userChoice = int.parse(stdin.readLineSync()!);
-    if (userChoice == 1) {
-      Map registerdData = register();
-      print(registerdData);
-    } else if (userChoice == 2) {
-      print("Login Now");
-    } else if (userChoice == 3) {
-      print("Thank you");
-      break;
-    } else {
-      print("Invalid choice, Try Again");
+  stdout.write("Enter the Limit : ");
+  int limit = int.parse(stdin.readLineSync()!);
+
+  for (int row = 1; row <= limit; row++) {
+    for (int col = 1; col <= row; col++) {
+      stdout.write("* ");
     }
+    print("");
   }
-}
-
-Map register() {
-  stdout.write("Enter user name : ");
-  String userName = stdin.readLineSync()!;
-  stdout.write("Enter pass : ");
-  String pass = stdin.readLineSync()!;
-  if (userName.isNotEmpty && pass.isNotEmpty) {
-    registeredName = userName;
-    registeredPass = pass;
-    print("User registered successfully!");
-  } else {
-    print("Failed to register Try again");
-  }
-
-  return {"name": userName, "pass": pass};
+  
 }
