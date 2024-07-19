@@ -120,21 +120,48 @@
 
 // }
 
+// class A {
+//   printA() {
+//     print("varA");
+//   }
+// }
+
+// class B extends A {
+//   @override
+//   printA() {
+//     print("varB");
+//     super.printA(); // assessing the parent class same function value.
+//   }
+// }
+
+// void main() {
+//   B obj = B();
+//   obj.printA();
+// }
+
 class A {
   printA() {
-    print("varA");
+    print("Hello ");
   }
 }
 
 class B extends A {
   @override
   printA() {
-    print("varB");
-    super.printA(); // assessing the parent class same function value.
+    print("hai");
+    super.printA();
+  }
+}
+
+class C extends B {
+  @override
+  printA() {
+    print("Welcome");
+    super.printA();
   }
 }
 
 void main() {
-  B obj = B();
+  C obj = C();
   obj.printA();
 }
