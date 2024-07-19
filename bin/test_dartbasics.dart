@@ -332,7 +332,7 @@ Write a program to print the following pattern
 import 'dart:io';
 
 void main() {
-  int number = 4;
+  int number = 2;
   int startingNumber = 1;
 
   for (int row = 0; row <= number; row++) {
